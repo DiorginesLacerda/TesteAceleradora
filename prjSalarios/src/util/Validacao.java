@@ -17,19 +17,18 @@ public class Validacao {
         return "";
     }
     
-    public static float numero(String n){
+    public static boolean numero(String n){
         try {
             float valor=Float.parseFloat(n);
             if (1/valor>0)
-                return valor;
+                return true;
             else
                 throw new Exception("Valor necessita ser maior que zero");
-        } catch (Exception e) {
-             
-            e.getMessage();
+        } catch (Exception e) { 
+            return false;
             
         }
-        return 0.0f;
+        
     }
     
     public static Date data(){
