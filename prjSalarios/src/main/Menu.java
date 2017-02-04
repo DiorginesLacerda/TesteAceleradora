@@ -21,7 +21,6 @@ public class Menu {
                 + "3 - Para listar  Custos"
                 + "4 - Encerrar a aplicação");
         return scan.nextLine();
-        
     }
     
 }

@@ -1,8 +1,6 @@
 package models;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  *++
@@ -43,7 +41,7 @@ public class Funcionario {
                 "; SegVida: R$ "+Float.toString(seguroDeVida)+
                 "; VR: R$"+Float.toString(valeRefeicao)+
                 "; VT: R$"+Float.toString(valeTranposte)+
-                "; CustTotal: R$"+Float.toString(salario+seguroDeVida+valeRefeicao+valeTranposte));
+                "; CustTotal: R$"+Float.toString(salario+seguroDeVida+valeRefeicao+valeTranposte)+"\n\r");
     }
     
     
