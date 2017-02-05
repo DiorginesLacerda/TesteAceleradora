@@ -29,7 +29,7 @@ public class Menu {
     }
     public Funcionario menuFuncionario() throws Exception{
         String nome,entrada;
-        int tentativa=0;
+        int tentativa=1;
         final int maxT=3;
         Date data;
         SimpleDateFormat simple= new SimpleDateFormat("dd/MM/yyyy");
@@ -39,7 +39,7 @@ public class Menu {
             entrada=scan.nextLine();
             if(Validacao.nome(entrada)){
                 nome=entrada;
-                tentativa =0;
+                tentativa =1;
                 break;
             }
             else
@@ -54,9 +54,11 @@ public class Menu {
         
         while(true){
             System.out.println("Digite o salário do funcionario");
+            
             entrada=scan.nextLine();
-            if(Validacao.numero(entrada)){
-                tentativa=0;
+            boolean teste=Validacao.numero(entrada);
+            if(teste){
+                tentativa=1;
                 salario=Float.parseFloat(entrada);
                 break;
             }
@@ -72,13 +74,13 @@ public class Menu {
             System.out.println("Digite a data de Admissão do funcionario no formato dd/mm/aaaa");
             entrada=scan.nextLine();
             if(Validacao.data(entrada)){
-                tentativa=0;
+                tentativa=1;
                 data=simple.parse(entrada);
                 break;
             }
             else
                 if(tentativa<maxT){
-                    System.err.println("Data inválida. Favor digite uma data no formato dd/mm//aaaa");
+                    System.err.println("Data inválida. Favor digite uma data válida no formato dd/mm/aaaa");
                     tentativa ++;
                 }     
                 else

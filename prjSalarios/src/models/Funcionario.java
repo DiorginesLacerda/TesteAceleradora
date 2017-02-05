@@ -14,7 +14,6 @@ public class Funcionario {
     private float seguroDeVida;
     private float valeRefeicao;
     private float valeTranposte;
-   // private Imposto imposto;
             
     public Funcionario() {
     }
@@ -23,10 +22,7 @@ public class Funcionario {
         this.nome = nome;
         this.salario = salario;
         this.admissao = admissao;
-        this.inss=salario*Imposto.INSS;
-        this.seguroDeVida=salario*Imposto.SEGURODEVIDA;
-        this.valeRefeicao=salario*Imposto.VALEREFEICAO;
-        this.valeTranposte=salario*Imposto.VALETRANSPORTE;
+        calculaImposto();
     }
 
     public void calculaImposto(){

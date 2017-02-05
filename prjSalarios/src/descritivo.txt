@@ -1,0 +1,13 @@
+Descritivo do projeto
+
+Funcionamento:
+
+As entradas do menu principal apenas validadas por um swith, não gerando exceção, há a possibilidade de saída do sistema pelo menu
+
+As entradas são validadas pelos métodos da classe util/validacao, sendo possível 3 tentativas para cada entrada, depois volta ao
+menu principal
+
+
+Classe de models/funcionário - classe de modelo simples
+Foi criada a classe models/Imposto buscando facilitar a manutenção do código, facilitando para a alteração dos valores dos impostos;
+Foram criados métodos de validação para as entradas na classe util/Validacao

@@ -6,6 +6,7 @@
 package util;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 
 /**
@@ -24,7 +25,9 @@ public class Validacao {
     public static boolean numero(String entrada){
         try {
             float valor=Float.parseFloat(entrada);
-                return (1/valor>0);
+                if(valor<=0)
+                    return false;
+                return true;
         } catch (Exception e) { 
             return false;
             
@@ -34,12 +37,18 @@ public class Validacao {
     
     public static boolean data(String entrada){
         SimpleDateFormat simple= new SimpleDateFormat("dd/MM/yyyy");
-        try {
+        if (entrada.matches("(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)")) {
+           try {
             Date data = simple.parse(entrada);
+            if(data.after(new Date()))
+                return false;
             return true;
-        } catch (Exception e) {
-            return false;
+            } catch (Exception e) {
+                return false;
+            }
+           
         }
+        return false;
         
     }
     
