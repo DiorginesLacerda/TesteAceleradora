@@ -30,7 +30,7 @@ public class FuncionarioNegocio {
         for (Funcionario funcionario : listaFuncionario) {
             retorno +=funcionario.toString();
         }
-        return retorno;
+        return retorno+"\n\r";
     }
 
     public String listaNome(){
@@ -38,6 +38,32 @@ public class FuncionarioNegocio {
         for (Funcionario funcionario : listaFuncionario) {
             retorno +=funcionario.getNome()+"\n\r";
         }
+        return retorno+"\n\r";
+    }
+    
+    public String listaCustos(){
+        String retorno="";
+        float salario=0;
+        float inss=0;
+        float seguroDeVida=0;
+        float valeRefeicao=0;
+        float valeTranposte=0;
+        
+        for (Funcionario funcionario : listaFuncionario) {
+            salario+=funcionario.getSalario();
+            inss+=funcionario.getInss();
+            seguroDeVida+=funcionario.getSeguroDeVIda();
+            valeRefeicao+=funcionario.getValeRefeicao();
+            valeTranposte+=funcionario.getValeTranposte();
+        }
+        retorno=("Total dos Custos da Folha de Pagamento"+
+                "\n\rSalários: R$"+Float.toString(salario)+
+                "\n\rINSS: R$"+Float.toString(inss)+
+                "\n\rSeguro de Vida: R$"+Float.toString(seguroDeVida)+
+                "\n\rVale Refeição: R$"+Float.toString(valeRefeicao)+
+                "\n\rVale Transporte: R$"+Float.toString(valeTranposte)+
+                "\n\rTotal de Custos:"+Float.toString(salario+inss+seguroDeVida+valeRefeicao+valeTranposte)+
+                "\n\n\r");
         return retorno;
     }
     

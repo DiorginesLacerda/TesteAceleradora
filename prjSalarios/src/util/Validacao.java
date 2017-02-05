@@ -16,9 +16,9 @@ public class Validacao {
     
     public static boolean nome(String entrada){
         if(entrada.trim().length()<3)
-            return true;
-        else
             return false;
+        else
+            return true;
     }
     
     public static boolean numero(String entrada){

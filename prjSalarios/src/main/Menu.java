@@ -22,9 +22,9 @@ public class Menu {
     public String menuPrincipal(){
         System.out.println("Menu Principal \n\r"
                 + "1 - Para adicionar um funcionário\n\r"
-                + "2 - Para listar Funcionários"
-                + "3 - Para listar  Custos"
-                + "4 - Encerrar a aplicação");
+                + "2 - Para listar Funcionários\n\r"
+                + "3 - Relatório detalhado de Custos\n\r"
+                + "0 - Encerrar a aplicação\n\r");
         return scan.nextLine();
     }
     public Funcionario menuFuncionario() throws Exception{
@@ -69,7 +69,7 @@ public class Menu {
                     throw new Exception("Número máximo de erros atingido, operação cancelada. \n\n\r");
         }
         while(true){
-            System.out.println("Digite a data de Admissão do funcionario no formato dd/mm//aaaa");
+            System.out.println("Digite a data de Admissão do funcionario no formato dd/mm/aaaa");
             entrada=scan.nextLine();
             if(Validacao.data(entrada)){
                 tentativa=0;
@@ -85,5 +85,6 @@ public class Menu {
                     throw new Exception("Número máximo de erros atingido, operação cancelada. \n\n\r");
         }
         return funcionario=new Funcionario(nome, salario, data);
+        
     }
 }

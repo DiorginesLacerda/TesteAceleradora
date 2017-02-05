@@ -14,8 +14,7 @@ public class Funcionario {
     private float seguroDeVida;
     private float valeRefeicao;
     private float valeTranposte;
-   // private float totalCustos;
-    private Imposto imposto;
+   // private Imposto imposto;
             
     public Funcionario() {
     }
@@ -24,13 +23,17 @@ public class Funcionario {
         this.nome = nome;
         this.salario = salario;
         this.admissao = admissao;
+        this.inss=salario*Imposto.INSS;
+        this.seguroDeVida=salario*Imposto.SEGURODEVIDA;
+        this.valeRefeicao=salario*Imposto.VALEREFEICAO;
+        this.valeTranposte=salario*Imposto.VALETRANSPORTE;
     }
 
     public void calculaImposto(){
-        inss=salario*imposto.INSS;
-        seguroDeVida=salario*imposto.SEGURODEVIDA;
-        valeRefeicao=salario*imposto.VALEREFEICAO;
-        valeTranposte=salario*imposto.VALETRANSPORTE;
+        inss=salario*Imposto.INSS;
+        seguroDeVida=salario*Imposto.SEGURODEVIDA;
+        valeRefeicao=salario*Imposto.VALEREFEICAO;
+        valeTranposte=salario*Imposto.VALETRANSPORTE;
     }
 
     @Override
@@ -41,7 +44,7 @@ public class Funcionario {
                 "; SegVida: R$ "+Float.toString(seguroDeVida)+
                 "; VR: R$"+Float.toString(valeRefeicao)+
                 "; VT: R$"+Float.toString(valeTranposte)+
-                "; CustTotal: R$"+Float.toString(salario+seguroDeVida+valeRefeicao+valeTranposte)+"\n\r");
+                "; CustTotal: R$"+Float.toString(salario+inss+seguroDeVida+valeRefeicao+valeTranposte)+"\n\r");
     }
     
     
