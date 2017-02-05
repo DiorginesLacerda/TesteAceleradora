@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package models;
+package bo;
 
 import java.util.ArrayList;
 import java.util.List;
+import models.Funcionario;
 
 /**
  *
  * @author diorgines
  */
-public class FuncionarioNegocio {
+public class BoFuncionario {
     private Funcionario funcionario;
     private List<Funcionario> listaFuncionario;
 
-    public FuncionarioNegocio() {
+    public BoFuncionario() {
         this.listaFuncionario=new ArrayList<>();
     }
     

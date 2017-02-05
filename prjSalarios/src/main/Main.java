@@ -5,7 +5,8 @@
  */
 package main;
 
-import models.FuncionarioNegocio;
+import views.Menu;
+import bo.BoFuncionario;
 
 /**
  *
@@ -13,7 +14,7 @@ import models.FuncionarioNegocio;
  */
 public class Main {
      private static Menu menu = new Menu();
-     private static FuncionarioNegocio fNegocio = new FuncionarioNegocio();
+     private static BoFuncionario fNegocio = new BoFuncionario();
      
     public static void main(String[] args) {
         while(true){
