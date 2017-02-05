@@ -17,7 +17,7 @@ public class FuncionarioNegocio {
     private List<Funcionario> listaFuncionario;
 
     public FuncionarioNegocio() {
-        this.listaFuncionario=new ArrayList<Funcionario>();
+        this.listaFuncionario=new ArrayList<>();
     }
     
     public void addFuncionario(Funcionario funcionario){
@@ -33,6 +33,13 @@ public class FuncionarioNegocio {
         return retorno;
     }
 
+    public String listaNome(){
+        String retorno="";
+        for (Funcionario funcionario : listaFuncionario) {
+            retorno +=funcionario.getNome()+"\n\r";
+        }
+        return retorno;
+    }
     
     
     public List<Funcionario> getListaFuncionario() {

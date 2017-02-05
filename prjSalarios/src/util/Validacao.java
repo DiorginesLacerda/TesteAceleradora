@@ -5,6 +5,7 @@
  */
 package util;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -13,17 +14,17 @@ import java.util.Date;
  */
 public class Validacao {
     
-    public static String texto(){
-        return "";
+    public static boolean nome(String entrada){
+        if(entrada.trim().length()<3)
+            return true;
+        else
+            return false;
     }
     
-    public static boolean numero(String n){
+    public static boolean numero(String entrada){
         try {
-            float valor=Float.parseFloat(n);
-            if (1/valor>0)
-                return true;
-            else
-                throw new Exception("Valor necessita ser maior que zero");
+            float valor=Float.parseFloat(entrada);
+                return (1/valor>0);
         } catch (Exception e) { 
             return false;
             
@@ -31,9 +32,15 @@ public class Validacao {
         
     }
     
-    public static Date data(){
+    public static boolean data(String entrada){
+        SimpleDateFormat simple= new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date data = simple.parse(entrada);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
         
-        return data();
     }
     
 }
